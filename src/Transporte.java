@@ -42,7 +42,24 @@ public class Transporte {
             System.out.println("combustible: $"+viaje.calcularCombustible());
             System.out.println("valor mercaderia: $"+viaje.calcularIngreso());
         }
+        String nombreBuscado="pepe";
+        int i = 0;
+        boolean encontrado = false;
 
+        while (i < personal.size()) {
+            conductores conductor = personal.get(i);
+            if (conductor.getNombre().equalsIgnoreCase(nombreBuscado)) {
+                System.out.println("Conductor encontrado: " + conductor);
+                encontrado = true;
+                break;
+            }
+            i++;
+        }
+
+        if (!encontrado) {
+            System.out.println("Conductor no encontrado.");
+        }
+    
     }
 
 }
